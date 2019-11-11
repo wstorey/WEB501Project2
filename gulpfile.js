@@ -29,8 +29,9 @@ function image() {
 
 function md() {
     return src('src/md/**/*.md')
-    // .pipe(frontMatter())
+    .pipe(frontMatter())
     .pipe(markdown())
+    .pipe(wrap({ src: 'src/templates/layout.html' }, null, { engine: 'nunjucks' }))
     .pipe(minifyHtml())
     .pipe(dest('dist/'));
 }

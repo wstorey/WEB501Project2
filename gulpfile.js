@@ -1,5 +1,5 @@
 const { src, dest, watch, parallel, series } = require('gulp');
-const fs = requie('fs');
+const fs = require('fs');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const del = require('delete');
@@ -31,7 +31,9 @@ function md() {
     return src('src/md/**/*.md')
     .pipe(frontMatter())
     .pipe(markdown())
-    .pipe(wrap({ src: 'src/templates/layout.html' }, null, { engine: 'nunjucks' }))
+    .pipe(wrap(
+        data => fs.readFileSync(`src/templates/${data.file.frontMatter.template}.html`).toString()
+        , null, { engine: 'nunjucks' }))
     .pipe(minifyHtml())
     .pipe(dest('dist/'));
 }

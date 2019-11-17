@@ -4,4 +4,9 @@ title: Home
 template: page
 ---
 
-# Home
+<div id = "hero">
+
+Years of Tradition
+
+</div>
+

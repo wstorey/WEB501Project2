@@ -4,4 +4,4 @@ title: Competition
 template: page
 ---
 
-# Competitions
+# Competition

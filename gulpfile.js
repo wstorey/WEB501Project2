@@ -60,7 +60,7 @@ function watch_task() {
     watch('src/scss/**/*.scss', series(css, reload));
     watch('src/md/**/*.md', series(md, reload));
     watch('src/js/**/*.js', series(js, reload));
-    watch('src/images/**/*', series(image, reload))
+    watch('src/images/**/*', series(image, reload));
 }
 
 function clean(cb) {

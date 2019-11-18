@@ -59,3 +59,6 @@ typings/
 
 # next.js build output
 .next
+
+# dist directory
+dir_to_ignore/dist

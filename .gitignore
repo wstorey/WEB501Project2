@@ -61,4 +61,4 @@ typings/
 .next
 
 # dist directory
-dir_to_ignore/dist
+dist/

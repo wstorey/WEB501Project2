@@ -20,5 +20,7 @@ template: page
 | 2018 | Chris Anderson | Christopher Parperis | Flo Early | Chris Anderson | Chris Anderson sets an all-time record of 22 race wins, then announces his retirement from the sport.
 | 2019 | Dr. Jupa | Ryan Fairley | Flo Early | Mark Kitt | Flo Early sets a new all-time record of 4 race wins in the ladies race.
 
+### Here's all the cheese they won
+
 ![The Prizes](ui/images/CheeseWheels.jpg)
 

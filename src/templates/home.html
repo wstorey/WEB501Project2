@@ -1,0 +1,11 @@
+{% extends "src/templates/layout.html" %}
+{% block main %}
+<article id="homeArticle">
+    <div id="hero">
+        <p>
+            Fun For The Whole Family
+        </p>
+    </div>
+    {{contents | safe}}
+</article>
+{% endblock %}

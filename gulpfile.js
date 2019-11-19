@@ -5,10 +5,8 @@ const browserSync = require('browser-sync').create();
 const del = require('delete');
 const terser = require('gulp-terser');
 const markdown = require('gulp-markdown');
-
 const wrap = require('gulp-wrap');
-const nunjucksRender = require('gulp-nunjucks-render');
-
+// const nunjucksRender = require('gulp-nunjucks-render');
 const frontMatter = require('gulp-front-matter');
 const minifyHtml = require('gulp-htmlmin');
 const imageMin = require('gulp-imagemin');
@@ -40,7 +38,8 @@ function md() {
         , null, { engine: 'nunjucks' }))
     // .pipe(nunjucksRender({
     //     path: 'src/templates/'}))
-    .pipe(minifyHtml())
+    .pipe(minifyHtml({ collapseWhitespace: true }))
+    // .pipe(minifyHtml())
     .pipe(dest('dist/'));
 }
 

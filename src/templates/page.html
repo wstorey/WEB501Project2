@@ -1,13 +1,6 @@
 {% extends "src/templates/layout.html" %}
 {% block main %}
 <article id="{{file.frontMatter.article}}Article">
-    {% if file.frontMatter.title=='Home'%}
-        <div id="hero">
-            <p>
-                    Fun For The Whole Family
-            </p>
-        </div>
-    {% endif %}
     {{contents | safe}}
 </article>
 {% endblock %}

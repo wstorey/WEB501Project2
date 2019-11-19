@@ -1,6 +1,6 @@
 ---
-title: Winners
-# banner: bannerbears.jpg
+title: Hall of Fame
+article: hof
 template: page
 ---
 

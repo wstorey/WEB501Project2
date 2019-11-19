@@ -1,6 +1,6 @@
 ---
 title: Home
-# banner: bannerbears.jpg
+article: home
 template: page
 ---
 

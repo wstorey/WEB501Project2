@@ -1,6 +1,6 @@
 ---
-title: Rules
-# banner: bannerbears.jpg
+title: About & Rules
+article: rules
 template: page
 ---
 # About

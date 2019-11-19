@@ -1,6 +1,6 @@
 ---
 title: Competition
-# banner: bannerbears.jpg
+article: comp
 template: page
 ---
 

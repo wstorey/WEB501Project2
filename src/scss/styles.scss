@@ -1,18 +1,70 @@
 //! Variable declarations
+$font-stack: Arial, Helvetica, sans-serif;;
 
 //! General Rules for all elements
 * {
     margin: 0;
     padding: 0;
+    font-family: $font-stack;
 }
 
 //! Body Grid layout
 
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "header"
+    "article"
+    "footer";
+}
 
+article {
+    grid-area: article;
+}
+
+footer {
+    grid-area: footer;
+}
 
 //! Header Styles
 
-
+header {
+    grid-area: header;
+    padding: 15px 0 15px 15px;
+    background: rgb(30, 30, 30);
+    ul {
+        display: grid;
+        grid-template-columns: auto 1fr auto auto auto;
+        grid-template-areas: 
+        "home . comp rules hof";
+        li {
+            list-style-type: none;
+            display: inline;
+            font-size: 1.1rem;
+            padding-right: 25px;
+            &:nth-of-type(1) {
+                grid-area: home;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+            &:nth-of-type(2) {
+                grid-area: comp;
+            }
+            &:nth-of-type(3) {
+                grid-area: rules;
+            } 
+            &:nth-of-type(4) {
+                grid-area: hof;
+            }
+            a {
+                text-decoration: none;
+                color: rgb(255, 200, 15);
+            }
+        }
+    }
+}
 
 //! Home Article Styles
 

@@ -13,7 +13,7 @@ $font-stack: Arial, Helvetica, sans-serif;;
 body {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 52px auto 40px;
     grid-template-areas: 
     "header"
     "article"
@@ -22,10 +22,6 @@ body {
 
 article {
     grid-area: article;
-}
-
-footer {
-    grid-area: footer;
 }
 
 //! Header Styles
@@ -68,28 +64,66 @@ header {
 
 //! Home Article Styles
 
-div#hero {
-    height: 80vh;
-    font-size: 1.2rem;
-    background-image: url('images/CheeseRolling.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+article#homeArticle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas: 
+    "hero hero hero hero"
+    ". heroCaption heroCaption ."
+    "para1 para1 para2 para2";
+    div#hero {
+        grid-area: hero;
+        height: 80vh;
+        font-size: 1.2rem;
+        background-image: url('images/CheeseRolling.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        p {
+            display: block;
+            grid-area: caption;
+            color: white;
+            background: rgba(50, 50, 50, 0.7);
+        }
+    }
+    p {
+        &:nth-of-type(1) {
+            grid-area: para1;
+        }
+        &:nth-of-type(2) {
+            grid-area: para2;
+        }
+    }
 }
 
 //! Competition Article Styles
 
-
+article#compArticle {
+    color: black;
+}
 
 //! Rules Article Styles
 
-
+article#rulesArticle {
+    color: black;
+}
 
 //! HallofFame Article Styles
 
-
+article#hofArticle {
+    color: black;
+}
 
 //! Footer Styles
 
-
+footer {
+    grid-area: footer;
+    text-align: center;
+    background: rgb(30, 30, 30);
+    p {
+        padding-top: 10px;
+        color: white;
+    }
+}

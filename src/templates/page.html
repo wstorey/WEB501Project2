@@ -1,14 +1,13 @@
 {% extends "src/templates/layout.html" %}
 {% block main %}
-{% if file.frontMatter.title=='Home'%}
-    <h1>Cooper's Hill Cheese-Rolling and Wake</h1>
-    <div id="hero">
-        <p>
-            Cooper's Hill Cheese-Rolling and Wake
-        </p>
-    </div>
-{% endif %}
-<article class="{{file.frontMatter.article}}Article">
+<article id="{{file.frontMatter.article}}Article">
+    {% if file.frontMatter.title=='Home'%}
+        <div id="hero">
+            <p>
+                    Fun For The Whole Family
+            </p>
+        </div>
+    {% endif %}
     {{contents | safe}}
 </article>
 {% endblock %}

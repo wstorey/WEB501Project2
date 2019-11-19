@@ -1,6 +1,11 @@
 {% extends "src/templates/layout.html" %}
 {% block main %}
-<article>
-    {{contents | safe}}
-</article>
+{% if file.frontMatter.title=='Home'%}
+    <div id="hero">
+        <p>
+            Cooper's Hill Cheese-Rolling and Wake
+        </p>
+    </div>
+{% endif %}
+{{contents | safe}}
 {% endblock %}

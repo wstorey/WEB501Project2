@@ -13,11 +13,12 @@ The first written evidence of cheese rolling is found from a message written to 
 ![Master of Ceremonies](ui/images/CheeseMaster.jpg)
 
 
-# Rules Summary
+## Rules Summary
 
 1. Start at the top of the hill
 2. Wait for the MC to roll a cheese wheel
 3. After the cheese has a one second head start, chase after it
+4. Please do not fight fellow competitors going down the hill
 4. First one to catch the cheese or make it down the hill first, __WINS!__
-5. Should you be injured after ~~falling~~ running down the hill, paramedics will be on site to help
+5. Should you be injured after running down the hill, paramedics will be on site to help
 6. The prize for catching the cheese wheel is your very own wheel of Double Gloucester cheese!

@@ -166,3 +166,16 @@ footer {
         color: white;
     }
 }
+
+//! Lightbox styles
+
+.lightbox {
+    position: absolute;
+    z-index: 1;
+    width: 60vw;
+    bottom: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}

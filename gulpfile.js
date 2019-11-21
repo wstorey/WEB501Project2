@@ -6,7 +6,6 @@ const del = require('delete');
 const terser = require('gulp-terser');
 const markdown = require('gulp-markdown');
 const wrap = require('gulp-wrap');
-// const nunjucksRender = require('gulp-nunjucks-render');
 const frontMatter = require('gulp-front-matter');
 const minifyHtml = require('gulp-htmlmin');
 const imageMin = require('gulp-imagemin');

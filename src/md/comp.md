@@ -17,6 +17,6 @@ By competing you are agreeing to our liability terms which state you are at faul
 
 ![Cooper's Hill](ui/images/Coopers_Hill.jpg)
 
-## Here's What You're In For (From ESPN)
+## Here's Your Race (From ESPN)
 
-<iframe width="939" height="537" src="https://www.youtube.com/embed/kq8k_ghBgZ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="939" height="528" src="https://www.youtube.com/embed/kq8k_ghBgZ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

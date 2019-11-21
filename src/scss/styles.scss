@@ -1,0 +1,329 @@
+//! Variable declarations
+$font-stack: Arial, Helvetica, sans-serif;
+$accent-yellow: rgb(255, 200, 15);
+$background-dark: rgb(30, 30, 30);
+
+//! General Rules for all elements
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $font-stack;
+}
+
+img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+p, li {
+    font-size: 1.2rem;
+}
+
+//! Body Grid layout
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 52px auto 40px;
+    grid-template-areas: 
+    "header"
+    "article"
+    "footer";
+}
+
+article {
+    grid-area: article;
+}
+
+//! Header Styles
+
+header {
+    grid-area: header;
+    padding: 15px 0 15px 15px;
+    background: $background-dark;
+    ul {
+        display: grid;
+        grid-template-columns: auto 1fr auto auto auto;
+        grid-template-areas: 
+        "home . comp rules hof";
+        li {
+            list-style-type: none;
+            display: inline;
+            font-size: 1.1rem;
+            padding-right: 25px;
+            &:nth-of-type(1) {
+                grid-area: home;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+            &:nth-of-type(2) {
+                grid-area: comp;
+            }
+            &:nth-of-type(3) {
+                grid-area: rules;
+            } 
+            &:nth-of-type(4) {
+                grid-area: hof;
+            }
+            a {
+                text-decoration: none;
+                color: $accent-yellow;
+            }
+        }
+    }
+}
+
+//! Home Article Styles
+
+article#homeArticle {
+    display: grid;
+    grid-template-columns: 10vw 1fr 1fr 10vw;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+    "hero hero hero hero"
+    ". para1 para2 .";
+    // column-gap: 5vw;
+    div#hero {
+        grid-area: hero;
+        height: 80vh;
+        font-size: 1.2rem;
+        background-image: url('images/CheeseRolling.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        display: grid;
+        grid-template-columns: auto 30% auto;
+        grid-template-rows: auto 6vh;
+        grid-template-areas: 
+        ". . ."
+        ". heroCaption .";
+        p {
+            grid-area: heroCaption;
+            color: white;
+            background: rgba(50, 50, 50, 0.7);
+            text-align: center;
+            font-size: 1.5rem;
+            padding-top: 10px;
+        }
+    }
+
+    p:nth-of-type(1),
+    p:nth-of-type(2) {
+        background: $accent-yellow;
+        padding: 15px 3vw;
+    }
+
+    p:nth-of-type(1) {
+        grid-area: para1;
+        // padding-right: 5vw;
+    }
+
+    p:nth-of-type(2) {
+        grid-area: para2;
+    }
+}
+
+//! Competition Article Styles
+
+article#compArticle {
+    margin: 10px 15px 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, auto);
+    // row-gap: 10px;
+    grid-template-areas: 
+    "heading heading . . . ."
+    "locHead dateHead timeHead . . ."
+    "loc date time . . ."
+    "noticeHead noticeHead . . . ."
+    "notice notice notice notice notice notice"
+    "viewHead viewHead viewHead vidHead vidHead vidHead"
+    "view view view vid vid vid";
+    h1 {
+        grid-area: heading;
+    }
+
+    h2:nth-of-type(1), 
+    h2:nth-of-type(2), 
+    h2:nth-of-type(3), 
+    h3:nth-of-type(1), 
+    h3:nth-of-type(2), 
+    h3:nth-of-type(3) {
+        background: $accent-yellow;
+    }
+
+    h2:nth-of-type(1) {
+        grid-area: locHead;
+    }
+
+    h3:nth-of-type(1) {
+        grid-area: loc;
+    }
+
+    h2:nth-of-type(2) {
+        grid-area: dateHead;
+    }
+
+    h3:nth-of-type(2) {
+        grid-area: date;
+    }
+
+    h2:nth-of-type(3) {
+        grid-area: timeHead;
+    }
+
+    h3:nth-of-type(3) {
+        grid-area: time;
+    }
+
+    h2:nth-of-type(4) {
+        grid-area: noticeHead;
+    }
+
+    p:nth-of-type(1) {
+        grid-area: notice;
+    }
+
+    h2:nth-of-type(5) {
+        grid-area: viewHead;
+    }
+
+    p:nth-of-type(2) {
+        grid-area: view;
+    }
+
+    h2:nth-of-type(6) {
+        grid-area: vidHead;
+    }
+
+    iframe {
+        grid-area: vid;
+    }
+}
+
+//! Rules Article Styles
+
+article#rulesArticle {
+    width: 85vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 35px repeat(3, auto) 35px auto auto;
+    grid-template-areas: 
+    "heading ."
+    "para1 para1"
+    "para2 para2"
+    "para3 para3"
+    "img rulesHead"
+    "img rules"
+    "img .";
+    row-gap: 5px;
+    h1 {
+        grid-area: heading;
+        padding: 5px 0;
+    }
+
+    p {
+        padding-bottom: 10px;
+    }
+    p:nth-of-type(1) {
+        grid-area: para1;
+    }
+
+    p:nth-of-type(2) {
+        grid-area: para2;
+    }
+
+    p:nth-of-type(3) {
+        grid-area: para3;
+    }
+
+    p:nth-of-type(4) {
+        grid-area: img;
+        display: block;
+        margin: 0 auto;
+    }
+
+    h2 {
+        grid-area: rulesHead;
+    }
+
+    ol {
+        grid-area: rules;
+        padding-left: 22px;
+        background: $accent-yellow;
+    }
+    
+}
+
+//! HallofFame Article Styles
+
+article#hofArticle {
+    h1 {
+        padding: 10px 0 5px 15px;
+    }
+    h3 {
+        padding: 0 0 10px 15px;
+    }
+    table {
+        border-collapse: collapse;
+        margin: 0 0 15px 15px;
+        td, th {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        th {
+            background: $background-dark;
+            color: white;
+        }
+
+        tr:nth-of-type(even) {
+            background: $accent-yellow;
+        }
+
+        td:last-of-type {
+            width: 45vw;
+        }
+    }
+    h3:last-of-type {
+        text-align: center;
+    }
+    p {
+        width: 60vw;
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 15px;
+    }
+    
+}
+
+//! Footer Styles
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    background: $background-dark;
+    p {
+        padding-top: 10px;
+        color: white;
+    }
+}
+
+//! Lightbox styles
+
+.lightbox {
+    position: absolute;
+    z-index: 1;
+    bottom: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+}
+
+.hidden {
+    display: none;
+}

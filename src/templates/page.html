@@ -1,6 +1,6 @@
 {% extends "src/templates/layout.html" %}
 {% block main %}
-<article>
+<article id="{{file.frontMatter.article}}Article">
     {{contents | safe}}
 </article>
 {% endblock %}

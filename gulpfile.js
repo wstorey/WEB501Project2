@@ -6,6 +6,7 @@ const del = require('delete');
 const terser = require('gulp-terser');
 const markdown = require('gulp-markdown');
 const wrap = require('gulp-wrap');
+// const nunjucksRender = require('gulp-nunjucks-render');
 const frontMatter = require('gulp-front-matter');
 const minifyHtml = require('gulp-htmlmin');
 const imageMin = require('gulp-imagemin');
@@ -28,13 +29,17 @@ function image() {
 }
 
 function md() {
+    const templatePath = data => fs.readFileSync(`src/templates/${data.file.frontMatter.template}.html`).toString();
     return src('src/md/**/*.md')
     .pipe(frontMatter())
     .pipe(markdown())
     .pipe(wrap(
         data => fs.readFileSync(`src/templates/${data.file.frontMatter.template}.html`).toString()
         , null, { engine: 'nunjucks' }))
-    .pipe(minifyHtml())
+    // .pipe(nunjucksRender({
+    //     path: 'src/templates/'}))
+    .pipe(minifyHtml({ collapseWhitespace: true }))
+    // .pipe(minifyHtml())
     .pipe(dest('dist/'));
 }
 
@@ -59,8 +64,9 @@ function reload(cb) {
 function watch_task() {
     watch('src/scss/**/*.scss', series(css, reload));
     watch('src/md/**/*.md', series(md, reload));
+    watch('src/templates/**/*.html', series(md, reload));
     watch('src/js/**/*.js', series(js, reload));
-    watch('src/images/**/*', series(image, reload))
+    watch('src/images/**/*', series(image, reload));
 }
 
 function clean(cb) {

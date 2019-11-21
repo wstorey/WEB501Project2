@@ -1,6 +1,7 @@
 'use strict';
 // Variable declaration
 // HTML elements that need to be hidden for lightbox
+const htmlEl = document.querySelector('html');
 const h2El = document.querySelectorAll('h2');
 const h3El = document.querySelectorAll('h3');
 const olEl = document.querySelector('ol');

@@ -1,5 +1,7 @@
 //! Variable declarations
-$font-stack: Arial, Helvetica, sans-serif;;
+$font-stack: Arial, Helvetica, sans-serif;
+$accent-yellow: rgb(255, 200, 15);
+$background-dark: rgb(30, 30, 30);
 
 //! General Rules for all elements
 * {
@@ -9,7 +11,9 @@ $font-stack: Arial, Helvetica, sans-serif;;
 }
 
 img {
-    width: 50vw;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
 }
 
 p, li {
@@ -37,7 +41,7 @@ article {
 header {
     grid-area: header;
     padding: 15px 0 15px 15px;
-    background: rgb(30, 30, 30);
+    background: $background-dark;
     ul {
         display: grid;
         grid-template-columns: auto 1fr auto auto auto;
@@ -64,7 +68,7 @@ header {
             }
             a {
                 text-decoration: none;
-                color: rgb(255, 200, 15);
+                color: $accent-yellow;
             }
         }
     }
@@ -79,7 +83,7 @@ article#homeArticle {
     grid-template-areas: 
     "hero hero hero hero"
     ". para1 para2 .";
-    column-gap: 5vw;
+    // column-gap: 5vw;
     div#hero {
         grid-area: hero;
         height: 80vh;
@@ -98,19 +102,26 @@ article#homeArticle {
         p {
             grid-area: heroCaption;
             color: white;
-            background: rgba(50, 50, 50, 0.8);
+            background: rgba(50, 50, 50, 0.7);
             text-align: center;
             font-size: 1.5rem;
             padding-top: 10px;
         }
     }
+
+    p:nth-of-type(1),
+    p:nth-of-type(2) {
+        background: $accent-yellow;
+        padding: 15px 3vw;
+    }
+
     p:nth-of-type(1) {
         grid-area: para1;
-        padding: 15px 0;
+        // padding-right: 5vw;
     }
+
     p:nth-of-type(2) {
         grid-area: para2;
-        padding: 15px 0;
     }
 }
 
@@ -134,34 +145,37 @@ article#compArticle {
         grid-area: heading;
     }
 
+    h2:nth-of-type(1), 
+    h2:nth-of-type(2), 
+    h2:nth-of-type(3), 
+    h3:nth-of-type(1), 
+    h3:nth-of-type(2), 
+    h3:nth-of-type(3) {
+        background: $accent-yellow;
+    }
+
     h2:nth-of-type(1) {
         grid-area: locHead;
-        background: rgb(255, 200, 15);
     }
 
     h3:nth-of-type(1) {
         grid-area: loc;
-        background: rgb(255, 200, 15);
     }
 
     h2:nth-of-type(2) {
         grid-area: dateHead;
-        background: rgb(255, 200, 15);
     }
 
     h3:nth-of-type(2) {
         grid-area: date;
-        background: rgb(255, 200, 15);
     }
 
     h2:nth-of-type(3) {
         grid-area: timeHead;
-        background: rgb(255, 200, 15);
     }
 
     h3:nth-of-type(3) {
         grid-area: time;
-        background: rgb(255, 200, 15);
     }
 
     h2:nth-of-type(4) {
@@ -178,9 +192,6 @@ article#compArticle {
 
     p:nth-of-type(2) {
         grid-area: view;
-        img {
-            width: 80%;
-        }
     }
 
     h2:nth-of-type(6) {
@@ -199,20 +210,24 @@ article#rulesArticle {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, auto) 20px auto;
+    grid-template-rows: 35px repeat(3, auto) 35px auto auto;
     grid-template-areas: 
     "heading ."
     "para1 para1"
     "para2 para2"
     "para3 para3"
     "img rulesHead"
-    "img rules";
-    row-gap: 15px;
-
+    "img rules"
+    "img .";
+    row-gap: 5px;
     h1 {
         grid-area: heading;
+        padding: 5px 0;
     }
 
+    p {
+        padding-bottom: 10px;
+    }
     p:nth-of-type(1) {
         grid-area: para1;
     }
@@ -227,11 +242,8 @@ article#rulesArticle {
 
     p:nth-of-type(4) {
         grid-area: img;
-        img {
-            width: 80%;
-            display: block;
-            margin: 0 auto;
-        }
+        display: block;
+        margin: 0 auto;
     }
 
     h2 {
@@ -241,6 +253,7 @@ article#rulesArticle {
     ol {
         grid-area: rules;
         padding-left: 22px;
+        background: $accent-yellow;
     }
     
 }
@@ -256,12 +269,20 @@ article#hofArticle {
     }
     table {
         border-collapse: collapse;
-        // margin: 0 auto;
         margin: 0 0 15px 15px;
         td, th {
-            border: 1px solid grey;
+            border: 1px solid black;
             padding: 5px;
         }
+        th {
+            background: $background-dark;
+            color: white;
+        }
+
+        tr:nth-of-type(even) {
+            background: $accent-yellow;
+        }
+
         td:last-of-type {
             width: 45vw;
         }
@@ -269,11 +290,13 @@ article#hofArticle {
     h3:last-of-type {
         text-align: center;
     }
-    img {
+    p {
+        width: 60vw;
         display: block;
         margin: 0 auto;
         padding-bottom: 15px;
     }
+    
 }
 
 //! Footer Styles
@@ -281,7 +304,7 @@ article#hofArticle {
 footer {
     grid-area: footer;
     text-align: center;
-    background: rgb(30, 30, 30);
+    background: $background-dark;
     p {
         padding-top: 10px;
         color: white;
@@ -293,10 +316,14 @@ footer {
 .lightbox {
     position: absolute;
     z-index: 1;
-    width: 60vw;
     bottom: 10vh;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
+
+}
+
+.hidden {
+    display: none;
 }
